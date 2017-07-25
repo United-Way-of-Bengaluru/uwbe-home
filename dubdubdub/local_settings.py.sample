@@ -1,0 +1,12 @@
+DEBUG = True
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'klpwww_ver4',
+        'USER': 'klp',
+        'PASSWORD': 'klp',
+        'HOST': '',
+        'PORT': '',
+    }
+}

@@ -1,0 +1,24 @@
+<ul class="js-dropdown nav">
+  <li class="brand-orange">
+    <a href="{% url 'map' %}">Aanganwadi Map</a>  
+  <li class="brand-blue">
+    <a href="{% url 'volunteer' %}">Volunteer</a>  
+  <li class="brand-purple">
+    <a href="#">Reports</a>
+    <ul>
+      <li><a href="/stories/">Field Stories</a></li>
+      <li><a href="/gka" target="_blank">GKA SMS</a></li>
+      <li><a href="#" target="_blank">DISE</a></li>
+      <li><a href="/reports/search" target="_blank">UWbe Reports</a></li>
+      <li><a href="#" target="_blank">SSLC</a></li> 
+      <li><a href="/sdmc" target="_blank">SDMC Reports</a></li>
+      <li><a href="{% url 'reports' %}">Other Reports</a></li>
+    </ul>
+  <li class="brand-red">
+    <a href="#">About</a>
+    <ul>
+      <li><a href="{% url 'aboutus' %}">About</a></li>
+      <li><a href="{% url 'partners' %}">Partners</a></li>
+      <li><a href="{% url 'disclaimer' %}">Disclaimer</a></li>
+    </ul>
+</ul>

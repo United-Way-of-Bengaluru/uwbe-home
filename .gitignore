@@ -1,0 +1,83 @@
+*.py[cod]
+*.sw*
+*~
+
+# Mac related
+.DS_Store
+.Trashes
+
+#secret key
+secret.txt
+
+#local settings
+local_settings.py
+local_test_settings.py
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+.vscode
+.idea
+
+# vagrant
+.vagrant
+dubdubdub.box
+
+# newrelic
+newrelic.ini
+
+# pdfs
+*.pdf
+
+collected-static
+media
+
+misc.sql
+
+# gitignore: added stuff to ignore here: e.g. screenshots
+gitignore/
+
+# data folder
+data
+*.log
+
+#logs folder
+logs/
+
+assets/static/css.old/
+assets/static/sass.old/
+.sass-cache/
+assets/static/css/style.css.map
+temp_dbs/
+
+dubdubdub.sql
