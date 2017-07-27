@@ -339,7 +339,7 @@ class AngInfraAgg(BaseModel):
         assessment every year.
         This is an aggregation table that groups the responses per school
         into 17 ai_metrics and 5 groups - the logic is here -
-        https://github.com/klpdotorg/importers/blob/master/ang_infra/db_scripts/agg_infra.sql.
+        https://github.com/United-Way-of-Bengaluru//importers/blob/master/ang_infra/db_scripts/agg_infra.sql.
         The view is from ang_infra
     '''
     school = models.ForeignKey('School', primary_key=True, db_column='sid')
