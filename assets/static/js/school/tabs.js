@@ -128,6 +128,64 @@
                     return data;
                 }
             },
+            'motherEngagement': {
+                getData: function() {
+                    if (SCHOOL_TYPE_ID === 2) { //is a preschool
+                        return klp.api.do(schoolInfoURL + '/infrastructure');
+                    }
+                    //for primary schools, fetch infra data from DISE
+                    if (DISE_CODE) {
+                        return klp.dise_api.fetchSchoolInfra(DISE_CODE);
+                    } else {
+                        var $deferred = $.Deferred();
+                        setTimeout(function() {
+                            $deferred.resolve({});
+                        }, 0);
+                        return $deferred;
+                    }
+                },
+                getContext: function(data) {
+                    data.type_name = klp.utils.getSchoolType(SCHOOL_TYPE_ID);
+                    if (SCHOOL_TYPE_ID === 1) {
+                        if (data.hasOwnProperty('properties')) {
+                            data = data.properties;
+                            data.facilities = klp.dise_infra.getFacilitiesData(data);
+                        } else {
+                            data.facilities = null;
+                        }
+                    }
+                    return data;
+                }
+            },
+            'learningEnvironment': {
+                getData: function() {
+                    if (SCHOOL_TYPE_ID === 2) { //is a preschool
+                        return klp.api.do(schoolInfoURL + '/infrastructure');
+                    }
+                    //for primary schools, fetch infra data from DISE
+                    if (DISE_CODE) {
+                        return klp.dise_api.fetchSchoolInfra(DISE_CODE);
+                    } else {
+                        var $deferred = $.Deferred();
+                        setTimeout(function() {
+                            $deferred.resolve({});
+                        }, 0);
+                        return $deferred;
+                    }
+                },
+                getContext: function(data) {
+                    data.type_name = klp.utils.getSchoolType(SCHOOL_TYPE_ID);
+                    if (SCHOOL_TYPE_ID === 1) {
+                        if (data.hasOwnProperty('properties')) {
+                            data = data.properties;
+                            data.facilities = klp.dise_infra.getFacilitiesData(data);
+                        } else {
+                            data.facilities = null;
+                        }
+                    }
+                    return data;
+                }
+            },
             'library': {
                 getData: function() {
                     var $deferred = $.Deferred();
@@ -422,7 +480,7 @@
 
         //compile templates for tabs
         _(keys).each(function(tabName) {
-            // console.log("tab name", tabName);
+            console.log("tab name", tabName);
             var templateString = $('#tpl-tab-' + tabName).html();
             templates[tabName] = swig.compile(templateString);
         });

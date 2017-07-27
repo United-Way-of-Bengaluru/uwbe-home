@@ -338,16 +338,18 @@
         {% if facilities %}
         <table class="table-data table-data-key">
           {% for title, facs in facilities %}
-          <tr>
-            <td>{{ title }}</td>
-            <td>
-              {% for key, value in facs %}
-              <div class="table-infra-key-color table-infra-icon-right brand-{% if value %}green{% else %}red{% endif %}">
-                  {{ key }}
-              </div>
-              {% endfor %}
-            </td>
-          </tr>
+            {% if title != 'Learning Environment' and title != 'Community Involvement' %}
+              <tr>
+                <td>{{ title }}</td>
+                <td>
+                  {% for key, value in facs %}
+                  <div class="table-infra-key-color table-infra-icon-right brand-{% if value %}green{% else %}red{% endif %}">
+                      {{ key }}
+                  </div>
+                  {% endfor %}
+                </td>
+              </tr>
+            {% endif %}
           {% endfor %}
         </table>
         {% else %}
@@ -375,6 +377,105 @@
     </table>
   </div> <!-- /container -->
 </script>
+
+<script type="text/html" id="tpl-tab-motherEngagement">
+  <div class="container">
+
+    <div class="tab-school-infra-block">
+      <div class="school-infra-table">
+        <h4 class="heading-tiny-uppercase">Mother Engagement</h4>
+        {% if facilities %}
+        <table class="table-data table-data-key">
+          {% for title, facs in facilities %}
+            {% if title == 'Community Involvement' %}
+            <tr>
+              <td>{{ title }}</td>
+              <td>
+                {% for key, value in facs %}
+                <div class="table-infra-key-color table-infra-icon-right brand-{% if value %}green{% else %}red{% endif %}">
+                    {{ key }}
+                </div>
+                {% endfor %}
+              </td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+        </table>
+        {% else %}
+        <div class="no-data">
+          No data available.
+        </div>
+        {% endif %}
+      </div> <!-- /school-infra-table -->
+
+      <div class="infra-key-legend">
+        <div class="table-infra-key-color table-infra-icon-right brand-green">Indicates infrastructure present</div>
+        <div class="table-infra-key-color table-infra-icon-right brand-red">Indicates infrastructure absent</div>
+        <div class="table-infra-key-color table-infra-icon-right brand-grey">Indicates information unavailable</div>
+      </div>
+
+    </div> <!-- /tab-school-infra-block -->
+
+    <div class="base-spacing-lg"></div>
+
+    <table class="table-data">
+      <tr>
+        <td>Source</td>
+        <td>{% if type_name == 'school' %}, <strong>NUEPA-DISE (2013-14)</strong>{% endif %}</td>
+      </tr>
+    </table>
+  </div> <!-- /container -->
+</script>
+
+<script type="text/html" id="tpl-tab-learningEnvironment">
+  <div class="container">
+
+    <div class="tab-school-infra-block">
+      <div class="school-infra-table">
+        <h4 class="heading-tiny-uppercase">Learning Environment</h4>
+        {% if facilities %}
+        <table class="table-data table-data-key">
+          {% for title, facs in facilities %}
+            {% if title == 'Learning Environment' %}
+            <tr>
+              <td>{{ title }}</td>
+              <td>
+                {% for key, value in facs %}
+                <div class="table-infra-key-color table-infra-icon-right brand-{% if value %}green{% else %}red{% endif %}">
+                    {{ key }}
+                </div>
+                {% endfor %}
+              </td>
+            </tr>
+            {% endif %}
+          {% endfor %}
+        </table>
+        {% else %}
+        <div class="no-data">
+          No data available.
+        </div>
+        {% endif %}
+      </div> <!-- /school-infra-table -->
+
+      <div class="infra-key-legend">
+        <div class="table-infra-key-color table-infra-icon-right brand-green">Indicates infrastructure present</div>
+        <div class="table-infra-key-color table-infra-icon-right brand-red">Indicates infrastructure absent</div>
+        <div class="table-infra-key-color table-infra-icon-right brand-grey">Indicates information unavailable</div>
+      </div>
+
+    </div> <!-- /tab-school-infra-block -->
+
+    <div class="base-spacing-lg"></div>
+
+    <table class="table-data">
+      <tr>
+        <td>Source</td>
+        <td>{% if type_name == 'school' %}, <strong>NUEPA-DISE (2013-14)</strong>{% endif %}</td>
+      </tr>
+    </table>
+  </div> <!-- /container -->
+</script>
+
 <script type="text/html" id="tpl-tab-library">
   <div class="container">
     <h4 class="heading-tiny-uppercase">Library</h4>
