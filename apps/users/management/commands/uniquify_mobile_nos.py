@@ -66,4 +66,4 @@ class Command(BaseCommand):
                     # delete either one
                     uniquify_user(users, users[0])
 
-        User.objects.filter(email='dev@klp.org.in').update(mobile_no='1231231239')
+        User.objects.filter(email='dev@uwbe.org.in').update(mobile_no='1231231239')

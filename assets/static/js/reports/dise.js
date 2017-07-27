@@ -43,9 +43,9 @@
     };
 
     var fillAdmin = function(acyear, adminlevel) {
-      var url_base = 'https://klp.org.in/public/adhoc-dise-reports',
+      var url_base = 'https://uwbe.org.in/public/adhoc-dise-reports',
           url = url_base + '/reports_dise_' + acyear.replace('-', ''),
-          dise_base = 'https://dise.klp.org.in/api/';
+          dise_base = 'https://dise.uwbe.org.in/api/';
 
       $reports_table.find('tbody').html('');
 
