@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://dev.klp.org.in/public/dubdubdub/dubdubdub.box"
+  config.vm.box_url = "http://dev.uwbe.org.in/public/dubdubdub/dubdubdub.box"
 
   config.vm.network "forwarded_port", guest: 8000, host: 8001
 
