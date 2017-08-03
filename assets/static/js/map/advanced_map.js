@@ -726,7 +726,7 @@
         L.control.layers({}, overlays, {collapsed: true}).addTo(map);
 
         mapLayers[preschoolCluster._leaflet_id] = 'preschool' ;
-        mapLayers[schoolCluster._leaflet_id] = 'school';
+        //mapLayers[schoolCluster._leaflet_id] = 'school';
         mapLayers[districtLayer._leaflet_id] = 'district';
         mapLayers[preschoolDistrictLayer._leaflet_id] = 'preschooldistrict';
         mapLayers[blockLayer._leaflet_id] = 'block';
