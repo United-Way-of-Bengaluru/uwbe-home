@@ -321,7 +321,7 @@
 
         schoolCluster = L.markerClusterGroup({chunkedLoading: true, removeOutsideVisibleBounds: true, showCoverageOnHover: false, iconCreateFunction: function(cluster) {
             return new L.DivIcon({ className:'marker-cluster marker-cluster-school', style:'style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate(293px, 363px); z-index: 363;"', html: "<div><span>" + cluster.getChildCount() + "</span></div>" });
-            }}).addTo(enabledLayers);
+            }});//.addTo(enabledLayers);
 
         var districtXHR = klp.api.do('boundary/admin1s', {'school_type':'primaryschools', 'geometry': 'yes', 'per_page': 0});
 
@@ -619,21 +619,21 @@
         }
 
         var overlays = {
-            '<span class="brand-school"><span class="icon-button-round-sm"><span class="k-icon">s</span></span> <span class="font-small">SCHOOL</span></span>': schoolCluster,
-            '<span class="brand-preschool"><span class="icon-button-round-sm"><span class="k-icon">p</span></span> <span class="font-small">PRESCHOOL</span>': preschoolCluster,
-            '<span class="brand-school-district"><span class="icon-button-round-sm"><span class="k-icon">sd</span></span> <span class="font-small">SCHOOL DISTRICT</span>': districtLayer,
-            '<span class="brand-preschool-district"><span class="icon-button-round-sm"><span class="k-icon">pd</span></span> <span class="font-small">PRESCHOOL DISTRICT</span>': preschoolDistrictLayer,
-            '<span class="brand-school-block"><span class="icon-button-round-sm"><span class="k-icon">sb</span></span> <span class="font-small">SCHOOL BLOCK</span>': blockLayer,
-            '<span class="brand-school-cluster"><span class="icon-button-round-sm"><span class="k-icon">sc</span></span> <span class="font-small">SCHOOL CLUSTER</span>': clusterLayer,
-            '<span class="brand-preschool-project"><span class="icon-button-round-sm"><span class="k-icon">pp</span></span> <span class="font-small">PRESCHOOL PROJECT</span>': projectLayer,
-            '<span class="brand-preschool-circle"><span class="icon-button-round-sm"><span class="k-icon">pc</span></span> <span class="font-small">PRESCHOOL CIRCLE</span>': circleLayer
+            //'<span class="brand-school"><span class="icon-button-round-sm"><span class="k-icon">s</span></span> <span class="font-small">SCHOOL</span></span>': schoolCluster,
+            '<span class="brand-preschool"><span class="icon-button-round-sm"><span class="k-icon">p</span></span> <span class="font-small">AANGANWADI</span>': preschoolCluster,
+            //'<span class="brand-school-district"><span class="icon-button-round-sm"><span class="k-icon">sd</span></span> <span class="font-small">DISTRICT</span>': districtLayer,
+            '<span class="brand-preschool-district"><span class="icon-button-round-sm"><span class="k-icon">pd</span></span> <span class="font-small">DISTRICT</span>': preschoolDistrictLayer,
+            //'<span class="brand-school-block"><span class="icon-button-round-sm"><span class="k-icon">sb</span></span> <span class="font-small">SCHOOL BLOCK</span>': blockLayer,
+            //'<span class="brand-school-cluster"><span class="icon-button-round-sm"><span class="k-icon">sc</span></span> <span class="font-small">SCHOOL CLUSTER</span>': clusterLayer,
+            '<span class="brand-preschool-project"><span class="icon-button-round-sm"><span class="k-icon">pp</span></span> <span class="font-small">PROJECT</span>': projectLayer,
+            '<span class="brand-preschool-circle"><span class="icon-button-round-sm"><span class="k-icon">pc</span></span> <span class="font-small">CIRCLE</span>': circleLayer
 
         };
 
         L.control.layers({}, overlays, {collapsed: true}).addTo(map);
 
         mapLayers[preschoolCluster._leaflet_id] = 'preschool' ;
-        mapLayers[schoolCluster._leaflet_id] = 'school';
+        //mapLayers[schoolCluster._leaflet_id] = 'school';
         mapLayers[districtLayer._leaflet_id] = 'district';
         mapLayers[preschoolDistrictLayer._leaflet_id] = 'preschooldistrict';
         mapLayers[blockLayer._leaflet_id] = 'block';
