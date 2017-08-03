@@ -73,7 +73,6 @@ data
 
 #logs folder
 logs/
-sql_files/
 
 assets/static/css.old/
 assets/static/sass.old/
